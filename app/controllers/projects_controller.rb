@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
   def show
     @project = current_user.projects.select{|r|r.id == params[:id].to_i}.first
     raise ActiveRecord::RecordNotFound unless @project
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.select{|r|r.project_id == params[:id].to_i}
   end
 
   def edit
