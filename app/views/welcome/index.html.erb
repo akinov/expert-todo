@@ -1,13 +1,13 @@
 <h2>Expert-todo</h2>
-<p>
+<p class="alert alert-success">
   Welcome to Expert-todo !!
 </p>
 
 <% if user_signed_in? %>
 
-<%= link_to 'My projects', projects_path %>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<%= link_to 'My projects', projects_path, class: "btn btn-primary" %>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete , class: "btn btn-primary" %>
 <% else %>
-<%= link_to 'Sign in', new_user_session_path %>
-<%= link_to 'Sign up', new_user_registration_path %>
+<%= link_to 'Sign in', new_user_session_path, class: "btn btn-default" %>
+<%= link_to 'Sign up', new_user_registration_path, class: "btn btn-default" %>
 <% end %>

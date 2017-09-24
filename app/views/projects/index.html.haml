@@ -1,6 +1,6 @@
 %h1 My projects
 
-%table
+%table{:class => 'table table-striped'}
   %thead
     %tr= t('labels.projects.name')
 
@@ -9,6 +9,4 @@
       %tr
         %td= link_to prj.name, project_path(prj)
 
-
-%br
-= link_to 'Create my project', new_project_path
+= link_to 'Create my project', new_project_path, class: "btn btn-primary btn-sm"
