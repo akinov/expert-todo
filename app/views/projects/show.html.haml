@@ -19,8 +19,8 @@
     %tr
       %th= t('labels.tasks.title')
       %th= t('labels.tasks.descritpion')
-      %th= t('labels.tasks.start_on')
-      %th= t('labels.tasks.end_on')
+      %th= t('labels.tasks.start_at')
+      %th= t('labels.tasks.end_at')
       %th= t('labels.tasks.state')
   %tbody
     -@tasks.each do |t|
@@ -35,6 +35,6 @@
       %tr{:class => task_state}
         %td= link_to t.title, project_task_path(@project, t)
         %td= t.description
-        %td= t.start_on.to_date
-        %td= t.end_on.to_date
+        %td= t.start_at.to_date
+        %td= t.end_at.to_date
         %td= t.state_name

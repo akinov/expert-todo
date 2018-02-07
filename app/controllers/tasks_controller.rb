@@ -41,10 +41,10 @@ class TasksController < ApplicationController
 
   private
   def task_create_params
-    params.require(:task).permit(:user_id, :title, :description, :start_on, :end_on)
+    params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at)
   end
 
   def task_update_params
-    params.require(:task).permit(:user_id, :title, :description, :start_on, :end_on)
+    params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at)
   end
 end
