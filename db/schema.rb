@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20170903095839) do
   enable_extension "plpgsql"
 
   create_table "project_members", force: :cascade do |t|
-    t.bigint "project_id"
-    t.bigint "user_id"
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
     t.integer "role", limit: 2, null: false
     t.index ["project_id"], name: "index_project_members_on_project_id"
     t.index ["user_id"], name: "index_project_members_on_user_id"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20170903095839) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.bigint "project_id"
-    t.bigint "user_id"
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
     t.string "title", limit: 240, null: false
     t.string "description", limit: 500
-    t.datetime "start_on", null: false
-    t.datetime "end_on", null: false
+    t.datetime "start_at", null: false
+    t.datetime "end_at", null: false
     t.integer "state", limit: 2, null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
