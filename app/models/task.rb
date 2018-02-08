@@ -12,8 +12,8 @@ class Task < ApplicationRecord
 
   validates :user_id, presence: true
   validates :title, presence: true
-  validates :start_on, presence: true
-  validates :end_on, presence: true
+  validates :start_at, presence: true
+  validates :end_at, presence: true
   validates :state, presence: true
 
   def init

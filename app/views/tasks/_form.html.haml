@@ -8,13 +8,13 @@
     %div{:class => 'col-xs-4'}
       = form.text_area :description, class: 'form-control', :placeholder => 'description', :rows => 3
   %div{:class => 'form-group'}
-    = form.label :start_on, class: 'col-sm-1 control-label'
+    = form.label :start_at, class: 'col-sm-1 control-label'
     %div{:class => 'col-xs-2'}
-      = form.date_field :start_on, class: 'form-control'
+      = form.date_field :start_at, class: 'form-control'
   %div{:class => 'form-group'}
-    = form.label :end_on, class: 'col-sm-1 control-label'
+    = form.label :end_at, class: 'col-sm-1 control-label'
     %div{:class => 'col-xs-2'}
-      = form.date_field :end_on, class: 'form-control'
+      = form.date_field :end_at, class: 'form-control'
   - if @task.persisted?
     %div{:class => 'form-group'}
       = form.label :state, class: 'col-sm-1 control-label'

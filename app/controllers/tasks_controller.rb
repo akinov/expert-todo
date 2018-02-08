@@ -41,10 +41,10 @@ class TasksController < ApplicationController
 
   private
   def task_create_params
-    params.require(:task).permit(Task.columns.map(&:name).map(&:to_sym).reject{|r| r == :state})
+    params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at)
   end
 
   def task_update_params
-    params.require(:task).permit(Task.columns.map(&:name).map(&:to_sym))
+    params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at)
   end
 end
