@@ -39,6 +39,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to project_path(@task.project)
+  end
+
   private
   def task_create_params
     params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at)

@@ -20,6 +20,8 @@
       = form.label :state, class: 'col-sm-1 control-label'
       %div{:class => 'col-xs-2'}
         = form.number_field :state, class: 'form-control'
-  %div{:class => 'form-group'}
-    %div{:class => 'col-sm-offset-1 col-sm-1'}
-      = form.submit 'Submit', class: 'btn btn-primary btn-sm'
+  = form.submit class: 'btn btn-primary btn-xs'
+
+- if @task.persisted?
+  %br
+  = link_to 'Delete', project_task_path(@task.project, @task), :data => {:confirm => 'Do you really want to delete?'}, :method => :delete
