@@ -19,9 +19,15 @@
     %div{:class => 'form-group'}
       = form.label :state, class: 'col-sm-1 control-label'
       %div{:class => 'col-xs-2'}
-        = form.number_field :state, class: 'form-control'
+        - state_list = [['未着手',1],['仕掛り中',2],['完了',3]]
+        = form.select 'state', options_for_select(state_list,@task.state.to_i)
   = form.submit class: 'btn btn-primary btn-xs'
 
+%span
 - if @task.persisted?
   %br
   = link_to 'Delete', project_task_path(@task.project, @task), :data => {:confirm => 'Do you really want to delete?'}, :method => :delete
+
+%br
+%br
+= link_to 'back' , project_task_path(@task)

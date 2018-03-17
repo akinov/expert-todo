@@ -30,4 +30,5 @@ class Task < ApplicationRecord
         '完了'
     end
   end
+
 end
