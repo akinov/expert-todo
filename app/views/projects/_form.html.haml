@@ -9,3 +9,7 @@
 - if @project.persisted?
   %br
   = link_to 'Delete', project_path(@project), :data => {:confirm => 'Do you really want to delete?'}, :method => :delete
+
+%br
+%br
+= link_to 'back', project_path(@project)
