@@ -4,4 +4,12 @@
     = form.text_field :name, class: "form-control"
   %br
   %br
-  = form.submit "Submit", class: 'btn btn-primary btn-xs'
+  = form.submit class: 'btn btn-primary btn-xs'
+
+- if @project.persisted?
+  %br
+  = link_to 'Delete', project_path(@project), :data => {:confirm => 'Do you really want to delete?'}, :method => :delete
+
+%br
+%br
+= link_to 'back', project_path(@project)

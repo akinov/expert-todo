@@ -26,3 +26,5 @@
     = @task.state_name
 
 = link_to 'edit task', edit_project_task_path(@task.project, @task)
+%br
+= link_to 'back', project_path(@task.project)
