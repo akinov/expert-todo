@@ -32,7 +32,6 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    binding.pry
     if @task.update(task_update_params)
       redirect_to project_task_path(@task.project, @task) , notice: 'success for updating task.'
     else
