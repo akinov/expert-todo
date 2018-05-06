@@ -10,7 +10,6 @@ feature 'ログインとログアウト' do
     # トップページを開く
     visit root_path
     # ログインフォームにEmailとパスワードを入力する
-    click_link 'Sign in'
     fill_in 'Email', with: 'hogehoge@test.com'
     fill_in 'Password', with: '123456'
     # ログインボタンをクリックする
@@ -22,7 +21,7 @@ feature 'ログインとログアウト' do
     login_as user, scope: :user
     visit root_path
     click_link 'Sign out'
-    expect(page).to have_content 'Sign in'
+    expect(page).to have_content 'Log in'
   end
   scenario 'サインアップする' do
     visit root_path
