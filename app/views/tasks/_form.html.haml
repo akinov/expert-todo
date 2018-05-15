@@ -30,4 +30,7 @@
 
 %br
 %br
-= link_to 'back' , project_task_path(@task)
+- if @task.persisted?
+  = link_to 'back' , project_task_path(@task)
+- else
+  = link_to 'back' , project_path(@task.project)
