@@ -12,4 +12,7 @@
 
 %br
 %br
-= link_to 'back', project_path(@project)
+- if @project.persisted?
+  = link_to 'back', project_path(@project)
+- else
+  = link_to 'back', projects_path
