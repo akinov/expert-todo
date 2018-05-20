@@ -15,6 +15,14 @@
     = form.label :end_at, class: 'col-sm-1 control-label'
     %div{:class => 'col-xs-2'}
       = form.date_field :end_at, class: 'form-control'
+
+  %div{:class => 'form-group'}
+    = form.label :file_attachment, class: 'col-sm-1 control-label'
+    %div{:class => 'col-xs-2'}
+      - @task.attach_files.each do |f|
+        = link_to f.filename, rails_blob_path(f)
+        = link_to 'remove', delete_attached_file_project_task_path(:file_id => f.id), method: :delete, data: { confirm: 'Are you sure?' }
+      = form.file_field :attach_files
   - if @task.persisted?
     %div{:class => 'form-group'}
       = form.label :state, class: 'col-sm-1 control-label'

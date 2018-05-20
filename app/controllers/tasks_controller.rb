@@ -50,12 +50,19 @@ class TasksController < ApplicationController
     redirect_to project_path(@task.project)
   end
 
+  def delete_attached_file
+    f = ActiveStorage::Attachment.find(params[:file_id])
+    f.purge
+    @task = Task.find(params[:id])
+    render 'edit'
+  end
+
   private
   def task_create_params
-    params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at)
+    params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at, :attach_files)
   end
 
   def task_update_params
-    params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at, :state)
+    params.require(:task).permit(:user_id, :title, :description, :start_at, :end_at, :state, :attach_files)
   end
 end
