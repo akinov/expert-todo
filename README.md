@@ -39,4 +39,4 @@ ExpertTodoという名前を使用すると環境にHerokuを使う場合など�
 bin/setup
 
 ## アプリURL
-https://two-sann-expert-todo.herokuapp.com/
+https://akinov-expert-todo.herokuapp.com/
