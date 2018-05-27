@@ -36,7 +36,14 @@ ExpertTodoという名前を使用すると環境にHerokuを使う場合など�
 - タスクに期限日・説明を設定できる
 
 ## 環境構築方法
-bin/setup
+### 初回
+`bin/setup`  
+※`docker-compose` があること
+
+### 2回目以降、起動方法
+`docker-compose up`
+### migration
+`docker-compose run web rake db:migrate`
 
 ## アプリURL
-https://two-sann-expert-todo.herokuapp.com/
+https://akinov-expert-todo.herokuapp.com/
